@@ -11,10 +11,22 @@ public void runOpMode()
 leftDrive= hardwareMap.get(DcMotor.class, "left_Drive");
 leftDrive= hardwareMap.get(DcMotor.class, "right_Drive");
 
-waitForStart();  
+waitForStart();
+  
+  drive(motorPower(0.4),1000);
+  drive(motorPower(0.2),300);
+  drive(motorPower(-0.3),100);
 
-leftDrive.setPower(power);
-rightDrive.setPower(-power);
-sleep(1000);
 }
+  public double motorPower(double speed) {
+    double power = 1*speed;
+    return power;
+  }
+ 
+  public void drive (double power, double time) {
+   leftDrive.setPower(.power);
+   rightDrive.setPower(-power);
+   sleep(1000);
+ }
+  
 }
